@@ -111,14 +111,14 @@ const LoremIpsum4 = styled.div`
 `;
 
 const Container = styled.div`
-  // display: flex;
+  display: flex;
   // border-width: 0px;
   // border-color: rgba(65, 117, 5, 1);
   // border-radius: 5px;
   // flex-direction: column;
   border-style: solid;
   position: absolute;
-  left: 30%;
+
   height: fit-content;
 `;
 const OrderBtn = styled.div`

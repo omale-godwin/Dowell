@@ -122,7 +122,8 @@ const Container = styled.div`
   // flex-direction: column;
   border-style: solid;
   position: absolute;
-  height: fit-content;
+  width: 100vw;
+  height: 100vw;
   left: 30%;
 `;
 const OrderBtn = styled.div`

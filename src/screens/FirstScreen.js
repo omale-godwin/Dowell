@@ -22,15 +22,17 @@ function FirstScreen(props) {
 }
 
 const Container = styled.div`
-  display: flex;
-  // border-width: 0px;
-  // border-color: rgba(65, 117, 5, 1);
-
   border-style: solid;
-  position: absolute;
-  left: 30%;
-  width: fit-content;
-  height: fit-content;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2px;
+  max-width: 100%;
+
+  @media (max-width: 480) {
+    flex-wrap: nowrap;
+  }
 `;
 
 const Rect = styled.div`
@@ -45,8 +47,8 @@ const Rect = styled.div`
 const Image2 = styled.div`
   top: 0px;
   left: 0px;
-  width: 369px;
-  height: 657px;
+  width: 360px;
+  height: 600px;
   position: absolute;
   flex-direction: column;
   display: flex;

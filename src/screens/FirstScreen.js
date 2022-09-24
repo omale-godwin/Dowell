@@ -22,17 +22,13 @@ function FirstScreen(props) {
 }
 
 const Container = styled.div`
-  border-style: solid;
-
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 2px;
-  max-width: 100%;
 
-  @media (max-width: 480) {
-    flex-wrap: nowrap;
-  }
+  border-style: solid;
+  position: absolute;
+
+  width: fit-content;
+  height: fit-content;
 `;
 
 const Rect = styled.div`
@@ -47,8 +43,8 @@ const Rect = styled.div`
 const Image2 = styled.div`
   top: 0px;
   left: 0px;
-  width: 360px;
-  height: 600px;
+  width: 369px;
+  height: 657px;
   position: absolute;
   flex-direction: column;
   display: flex;

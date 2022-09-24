@@ -104,11 +104,6 @@ function ThirdScreen(props) {
               </OrderBtn>
             </Rect2>
           </Image2Stack>
-          <Link to="/">
-            <PlusIcon>
-              <AiFillPlusCircle size="40px" color="green" />
-            </PlusIcon>
-          </Link>
         </Rect>
       </RectStack>
     </Container>
@@ -127,6 +122,7 @@ const Container = styled.div`
   // flex-direction: column;
   border-style: solid;
   position: absolute;
+  height: fit-content;
   left: 30%;
 `;
 const OrderBtn = styled.div`
@@ -138,7 +134,7 @@ const Rect = styled.div`
   top: -40px;
   left: 0px;
   width: 375px;
-  height: 738px;
+  height: fit-content;
   position: absolute;
   background-color: #e6e6e6;
 `;
@@ -228,7 +224,7 @@ const PlusIcon = styled.div`
   width: 66px;
   height: 100%;
   position: absolute;
-  top: 730px;
+
   left: 300px;
   object-fit: contain;
 `;

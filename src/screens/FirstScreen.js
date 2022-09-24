@@ -8,9 +8,8 @@ function FirstScreen(props) {
     <Container>
       <RectStack>
         <Rect>
-          <Image2Stack>
-            <Image2></Image2>
-          </Image2Stack>
+          <Image2></Image2>
+
           <Link to="/SecondScreen">
             <PlusIcon>
               <AiFillPlusCircle size="40px" color="green" />
@@ -23,21 +22,22 @@ function FirstScreen(props) {
 }
 
 const Container = styled.div`
-  // display: flex;
+  display: flex;
   // border-width: 0px;
   // border-color: rgba(65, 117, 5, 1);
-  // border-radius: 5px;
-  // flex-direction: column;
+
   border-style: solid;
   position: absolute;
   left: 30%;
+  width: fit-content;
+  height: fit-content;
 `;
 
 const Rect = styled.div`
   top: -40px;
   left: 0px;
   width: 375px;
-  height: 738px;
+  height: fit-content;
   position: absolute;
   background-color: #e6e6e6;
 `;
@@ -52,12 +52,6 @@ const Image2 = styled.div`
   display: flex;
   background-image: url(${require("../assets/images/do1.png")});
   background-size: cover;
-`;
-
-const Image2Stack = styled.div`
-  width: 350px;
-  height: 393px;
-  position: relative;
 `;
 
 const PlusIcon = styled.div`

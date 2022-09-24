@@ -119,6 +119,7 @@ const Container = styled.div`
   border-style: solid;
   position: absolute;
   left: 30%;
+  height: fit-content;
 `;
 const OrderBtn = styled.div`
   padding-left: 30%;
@@ -129,7 +130,7 @@ const Rect = styled.div`
   top: -40px;
   left: 0px;
   width: 375px;
-  height: 738px;
+  height: fit-content;
   position: absolute;
   background-color: #e6e6e6;
 `;

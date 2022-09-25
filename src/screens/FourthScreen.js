@@ -1,12 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import "../components/drop.css";
 import CupertinoFooter2 from "../components/CupertinoFooter2";
 import MaterialCardWithButtons from "../components/MaterialCardWithButtons";
 import MaterialRadio1 from "../components/MaterialRadio1";
 import CupertinoFooter21 from "../components/CupertinoFooter21";
 import MaterialButtonDanger from "../components/MaterialButtonDanger";
+import Slider from "react-slick";
 
 function FourthScreen(props) {
+  const [productname, setproductname] = useState("");
+  const [productcode, setproductcode] = useState("");
+  const settings = {
+    className: "slider variable-width",
+
+    infinite: true,
+    centerMode: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    variableWidth: true,
+  };
+  const Quantity = ["1", "2", "3", "4", "5", "6", "7", "9"];
+  var ProdName = ["Product Name", "this", "example", "isnt", "funny"];
+  var ProdCode = ["Product Code", "Z10002", "Z10003", "Z10007", "Z10002"],
+    MakeItem = function (X) {
+      return <option>{X}</option>;
+    };
   return (
     <Container>
       <RectStack>
@@ -106,22 +125,7 @@ function FourthScreen(props) {
                 top: 5,
               }}></MaterialRadio1>
           </TextInput6StackStack>
-          <CupertinoFooter21
-            style={{
-              height: 49,
-              width: 308,
-              position: "absolute",
-              left: 2,
-              top: 600,
-            }}></CupertinoFooter21>
-          <CupertinoFooter2
-            style={{
-              height: 50,
-              width: 327,
-              position: "absolute",
-              top: 680,
-              left: 17,
-            }}></CupertinoFooter2>
+
           <Rect>
             <LoremIpsumRow>
               <LoremIpsum>selected dished {"\n"}detail goes here</LoremIpsum>
@@ -138,11 +142,111 @@ function FourthScreen(props) {
                   boxShadow: "5px 5px 0px  0.76px rgba(0,0,0,1) ",
                 }}></MaterialButtonDanger>
             </LoremIpsumRow>
-            <QuantityRow></QuantityRow>
+
+            <QuantityRow>
+              <div>Quantity</div>
+              <select
+                style={{
+                  textAlign: "center",
+                  fontWeight: 400,
+                  color: "#121212",
+                  height: "19px",
+                  width: "63px",
+                  border: "none",
+                  background: "transparent",
+                }}>
+                {Quantity.map(MakeItem)}
+              </select>
+            </QuantityRow>
           </Rect>
-          <TextInput8 placeholder="Lorem Ipsum"></TextInput8>
-          <TextInput9 placeholder="Lorem Ipsum"></TextInput9>
-          <Rect2></Rect2>
+          <ProductName>
+            <select
+              style={{
+                borderLeftWidth: "5px",
+                fontWeight: 400,
+                color: "#121212",
+                height: "36px",
+                width: "163px",
+                bordercolor: "green",
+                background: "transparent",
+              }}>
+              {ProdName.map(MakeItem)}
+            </select>
+          </ProductName>
+          <ProductCode>
+            <select
+              style={{
+                borderLeftWidth: "5px",
+                fontWeight: 400,
+                color: "#121212",
+                height: "36px",
+                width: "163px",
+                borderRightWidth: "5px",
+                bordercolor: "green",
+
+                background: "transparent",
+              }}>
+              {ProdCode.map(MakeItem)}
+            </select>
+          </ProductCode>
+          <Rect2>
+            <div>
+              <h2></h2>
+              <Slider {...settings}>
+                <div className="pr-2">
+                  <img
+                    style={{ width: "100px", height: "90px" }}
+                    src={require("../assets/images/logo.png")}
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    style={{ width: "100px", height: "90px" }}
+                    src={require("../assets/images/do1.png")}
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    style={{ width: "100px", height: "90px" }}
+                    src={require("../assets/images/do1.png")}
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    style={{ width: "100px", height: "90px" }}
+                    src={require("../assets/images/do1.png")}
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    style={{ width: "100px", height: "90px" }}
+                    src={require("../assets/images/do1.png")}
+                    alt=""
+                  />
+                </div>
+              </Slider>
+            </div>
+          </Rect2>
+          <CupertinoFooter21
+            style={{
+              height: 49,
+              width: 308,
+              position: "absolute",
+              left: 2,
+              top: 600,
+            }}></CupertinoFooter21>
+          <CupertinoFooter2
+            style={{
+              height: 50,
+              width: 327,
+              position: "absolute",
+              top: 680,
+              left: 17,
+            }}></CupertinoFooter2>
         </Dowell>
       </RectStack>
     </Container>
@@ -156,6 +260,8 @@ const Container = styled.div`
   // flex-direction: column;
   border-style: solid;
   position: absolute;
+
+  height: fit-content;
 `;
 const RectStack = styled.div`
   width: 381px;
@@ -409,36 +515,21 @@ const QuantityRow = styled.div`
   margin-right: 123px;
 `;
 
-const TextInput8 = styled.input`
+const ProductName = styled.div`
   font-family: Roboto;
   top: 426px;
   left: 17px;
   position: absolute;
   font-style: normal;
   font-weight: 400;
-  color: #121212;
-  height: 36px;
-  width: 155px;
-  border-width: 3px;
-  border-color: #000000;
-  border-style: solid;
-  background: transparent;
 `;
 
-const TextInput9 = styled.input`
-  font-family: Roboto;
+const ProductCode = styled.div`
   top: 426px;
   left: 180px;
   position: absolute;
   font-style: normal;
   font-weight: 400;
-  color: #121212;
-  height: 36px;
-  width: 155px;
-  border-width: 3px;
-  border-color: #000000;
-  border-style: solid;
-  background: transparent;
 `;
 
 const Rect2 = styled.div`

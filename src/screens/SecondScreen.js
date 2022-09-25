@@ -247,8 +247,8 @@ const PlusIcon = styled.div`
 `;
 
 const RectStack = styled.div`
-  width: 381px;
-  height: 738px;
+  width: 360px;
+  height: 700px;
   margin-top: 50px;
   position: relative;
   border-radius: 10px;
